@@ -1,0 +1,47 @@
+/* Global app styles */
+:host {
+    display: block;
+    min-height: 100vh;
+}
+
+/* Remove default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure proper routing transitions */
+router-outlet {
+    display: block;
+}
+
+/* Loading states */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    font-size: 1.2rem;
+    color: var(--dm-text-light);
+}
+
+/* Error states */
+.error-message {
+    background: var(--dm-danger);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--dm-radius);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Success states */
+.success-message {
+    background: var(--dm-success);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--dm-radius);
+    margin: 1rem 0;
+    text-align: center;
+}

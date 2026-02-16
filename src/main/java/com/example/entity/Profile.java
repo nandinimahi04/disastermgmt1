@@ -13,6 +13,21 @@ public class Profile {
     private String phone;
     private String location;
 
+    // role specific fields
+    // CITIZEN
+    private String address;
+    private String bloodGroup;
+    private String emergencyContact;
+
+    // RESPONDER
+    private String organization;
+    private String certificationId;
+    private String skills;
+
+    // ADMIN
+    private String staffId;
+    private String department;
+
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -57,5 +72,68 @@ public class Profile {
     public void setUser(User user) {
         this.user = user;
     }
-}
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getBloodGroup() {
+        return bloodGroup;
+    }
+
+    public void setBloodGroup(String bloodGroup) {
+        this.bloodGroup = bloodGroup;
+    }
+
+    public String getEmergencyContact() {
+        return emergencyContact;
+    }
+
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+
+    public String getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(String organization) {
+        this.organization = organization;
+    }
+
+    public String getCertificationId() {
+        return certificationId;
+    }
+
+    public void setCertificationId(String certificationId) {
+        this.certificationId = certificationId;
+    }
+
+    public String getSkills() {
+        return skills;
+    }
+
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+
+    public String getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(String staffId) {
+        this.staffId = staffId;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+}

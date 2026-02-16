@@ -1,0 +1,59 @@
+<div class="dashboard-root">
+    <aside class="side-nav">
+        <div class="nav-brand">
+            <div class="logo">NEXA</div>
+        </div>
+        <nav class="nav-menu">
+            <a class="nav-item active"><i class="fas fa-satellite-dish"></i> Field Dashboard</a>
+            <a class="nav-item"><i class="fas fa-list-ul"></i> Active Incidents</a>
+            <a class="nav-item"><i class="fas fa-users-cog"></i> Team Chat</a>
+            <a class="nav-item"><i class="fas fa-history"></i> Reports</a>
+        </nav>
+        <div class="nav-user">
+            <div class="user-info">
+                <span class="avatar">{{ responderName.charAt(0) }}</span>
+                <span class="user-name">{{ responderName }}</span>
+            </div>
+            <button class="icon-btn" (click)="logout()"><i class="fas fa-power-off"></i></button>
+        </div>
+    </aside>
+
+    <main class="dashboard-content">
+        <header class="content-header">
+            <div class="header-breadcrumb">
+                <span class="text-tertiary">App</span> / <span class="text-primary">Worker Center</span>
+            </div>
+            <div class="active-status">
+                <span class="status-indicator pulsate"></span> HELP IS NEEDED NOW
+            </div>
+        </header>
+
+        <section class="ops-overview">
+            <div class="alert-banner premium-card">
+                <div class="alert-info">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <span>Team is connected. High Priority Alert!</span>
+                </div>
+                <div class="timer">04:12m EST</div>
+            </div>
+
+            <div class="grid incident-feed">
+                <div class="incident-card premium-card" *ngFor="let incident of incidents">
+                    <div class="card-header">
+                        <span class="incident-type">{{ incident.type }}</span>
+                        <span class="badge" [ngClass]="incident.priority">{{ incident.priority }}</span>
+                    </div>
+                    <h3 class="incident-title">{{ incident.title }}</h3>
+                    <p class="incident-desc">{{ incident.description }}</p>
+                    <div class="card-footer">
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> {{ incident.location }}</span>
+                        <div class="action-btns">
+                            <button class="btn-nexa-primary sm">Respond</button>
+                            <button class="btn-outline sm">Ask for Help</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

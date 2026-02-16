@@ -1,0 +1,197 @@
+
+:host {
+    display: block;
+    background: radial-gradient(circle at top right, #FFFFFF 0%, #EEF2FF 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+:host::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--nexa-indigo);
+    filter: blur(150px);
+    opacity: 0.05;
+    bottom: -200px;
+    left: -200px;
+    z-index: 0;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    margin: 1rem 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--nexa-blue);
+}
+
+.nav-links a.active {
+    color: var(--nexa-blue);
+}
+
+/* NEXA 2.0 Auth Styles */
+.auth-wrapper {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 3rem;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  padding: 12px 12px 12px 2.75rem;
+  background: var(--surface-base);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.input-wrapper select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+  outline: none;
+  border-color: var(--nexa-indigo);
+  background: var(--surface-base);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
+}
+
+.auth-actions {
+  margin-top: 1.5rem;
+}
+
+.btn-nexa-primary.full {
+  width: 100%;
+  padding: 14px;
+}
+
+.auth-status {
+  margin-top: 3rem;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  background: var(--nexa-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--nexa-blue);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.form-options {
+  text-align: left;
+  margin: 1.5rem 0 2rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* End of NEXA 2.0 Auth Styles */

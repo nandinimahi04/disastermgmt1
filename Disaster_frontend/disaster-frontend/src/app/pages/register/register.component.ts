@@ -1,24 +1,47 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  standalone:true,
-  imports:[CommonModule,FormsModule]
+  styleUrls: ['./register.component.css'],
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule]
 })
-export class RegisterComponent {
-  email = '';
-  password = '';
-  role = 'USER';
+export class RegisterComponent implements OnInit {
+  registerObj = {
+    fullName: '',
+    email: '',
+    password: '',
+    role: 'USER'
+  };
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+  }
 
   register() {
-    this.auth.register({ email: this.email, password: this.password, role: this.role })
-      .subscribe(() => this.router.navigate(['']));
+    if (this.registerObj.fullName && this.registerObj.email && this.registerObj.password) {
+      console.log('Registering:', this.registerObj);
+      this.auth.register(this.registerObj).subscribe({
+        next: () => {
+          alert('Registration successful!');
+          this.router.navigate(['/login']);
+        },
+        error: (err) => {
+          console.error(err);
+          alert('Registration failed. Node might already exist.');
+        }
+      });
+    } else {
+      alert('Please initialize all required protocol fields.');
+    }
   }
 }

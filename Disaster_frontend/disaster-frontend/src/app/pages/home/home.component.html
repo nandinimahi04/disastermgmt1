@@ -1,0 +1,194 @@
+<!-- ================= HEADER ================= -->
+<header>
+    <nav class="top-nav glass-card" aria-label="Main Navigation">
+
+        <div class="logo-area">
+            <div class="logo">NEXA</div>
+        </div>
+
+        <div class="nav-links">
+
+            <a routerLink="/"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact:true}">
+               Product
+            </a>
+
+            <a routerLink="/how-it-works"
+               routerLinkActive="active">
+               How it Works
+            </a>
+
+            <a routerLink="/register"
+               class="btn-nexa-outline sm"
+               routerLinkActive="active">
+               Sign Up
+            </a>
+
+            <a routerLink="/login"
+               class="btn-nexa-primary sm"
+               routerLinkActive="active">
+               Log In
+            </a>
+
+        </div>
+
+    </nav>
+</header>
+
+
+
+<!-- ================= MAIN ================= -->
+<main class="home-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+
+        <!-- LEFT CONTENT -->
+        <div class="hero-content">
+
+            <span class="badge-pill">NEXA</span>
+
+            <h1 class="hero-title">
+                Your Center for <br>
+                <span class="text-gradient">Emergency Help.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                A simple way to manage disasters. Get help, share info, and stay safe
+                with our easy-to-use tools.
+            </p>
+
+            <div class="hero-actions">
+
+                <a routerLink="/register" class="btn-nexa-primary lg">
+                    Get Started
+                </a>
+
+                <a routerLink="/login" class="btn-nexa-outline lg">
+                    Log In
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SLIDER -->
+        <div class="hero-image-area">
+
+            <div class="slider">
+
+                <div class="slides"
+                     [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+
+                    <div class="slide">
+                        <img src="p2.png"
+                             alt="Emergency monitoring dashboard interface"
+                             loading="lazy"
+                             draggable="false">
+                    </div>
+
+                    <div class="slide">
+                        <img src="p1.png"
+                             alt="Rescue team responding to disaster"
+                             loading="lazy"
+                             draggable="false">
+                    </div>
+
+                    <div class="slide">
+                        <img src="p2.png"
+                             alt="Disaster alert notification interface"
+                             loading="lazy"
+                             draggable="false">
+                    </div>
+
+                    <div class="slide">
+                        <img src="p1.png"
+                             alt="Emergency response team coordination"
+                             loading="lazy"
+                             draggable="false">
+                    </div>
+
+                </div>
+
+
+                <!-- DOT INDICATORS -->
+                <div class="dots">
+
+                    <span *ngFor="let s of slides; let i=index"
+                          [class.active]="i === currentSlide"
+                          (click)="goToSlide(i)">
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FEATURES -->
+    <section class="features-section">
+
+        <div class="container">
+
+            <div class="grid features-grid">
+
+                <div class="feature-card" *ngFor="let feature of features">
+
+                    <div class="feature-icon-box">
+                        <i class="fas" [ngClass]="feature.icon"></i>
+                    </div>
+
+                    <h3>{{ feature.title }}</h3>
+                    <p>{{ feature.description }}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+            <div class="logo">NEXA</div>
+            <p>Intelligence-driven emergency management.</p>
+        </div>
+
+        <div class="footer-links-group">
+            <a href="#">Security</a>
+            <a href="#">Network</a>
+            <a href="#">Governance</a>
+            <a href="#">Identity</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>&copy; 2026 NEXA Enterprise. All rights reserved.</p>
+
+        <div class="system-status">
+            <span class="status-indicator"></span>
+            All Systems Working
+        </div>
+
+    </div>
+
+</footer>

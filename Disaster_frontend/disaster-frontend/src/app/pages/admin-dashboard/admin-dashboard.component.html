@@ -1,0 +1,124 @@
+<div class="dashboard-root">
+
+    <!-- Sidebar -->
+    <aside class="side-nav">
+        <div class="nav-brand">
+            <div class="logo">NEXA</div>
+        </div>
+
+        <nav class="nav-menu">
+            <a class="nav-item active">
+                <i class="fas fa-home"></i> Main Control
+            </a>
+            <a class="nav-item">
+                <i class="fas fa-users"></i> Staff Members
+            </a>
+            <a class="nav-item">
+                <i class="fas fa-map-marker-alt"></i> Location List
+            </a>
+            <a class="nav-item">
+                <i class="fas fa-cog"></i> App Settings
+            </a>
+        </nav>
+
+        <div class="nav-user">
+            <div class="user-info">
+                <span class="avatar">A</span>
+                <span class="user-name">Administrator</span>
+            </div>
+
+            <button class="icon-btn" (click)="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="dashboard-content">
+
+        <!-- Header -->
+        <header class="content-header">
+            <div class="header-breadcrumb">
+                <span class="text-tertiary">Admin</span> /
+                <span class="text-primary">Main Control</span>
+            </div>
+
+            <div class="header-actions">
+                <div class="server-status">
+                    <span class="status-indicator"></span>
+                    ALL SYSTEMS WORKING
+                </div>
+            </div>
+        </header>
+
+
+        <!-- Table Section -->
+        <section class="table-section">
+
+            <table class="data-table">
+
+                <!-- Table Head -->
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody>
+
+                    <tr>
+                        <td>07:45 AM</td>
+                        <td>Area 1</td>
+                        <td>
+                            <span class="badge success">Fixed</span>
+                        </td>
+                        <td>
+                            <button class="btn-outline sm">View Log</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>08:12 AM</td>
+                        <td>Area 2</td>
+                        <td>
+                            <span class="badge info">Checking</span>
+                        </td>
+                        <td>
+                            <button class="btn-outline sm">View Live</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>09:02 AM</td>
+                        <td>Area 3</td>
+                        <td>
+                            <span class="badge warning">Watching</span>
+                        </td>
+                        <td>
+                            <button class="btn-outline sm">Check Now</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>09:45 AM</td>
+                        <td>Area 4</td>
+                        <td>
+                            <span class="badge danger">Emergency</span>
+                        </td>
+                        <td>
+                            <button class="btn-outline sm">Help Now</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+</div>

@@ -1,0 +1,79 @@
+<div class="dashboard-root">
+    <aside class="side-nav">
+        <div class="nav-brand">
+            <div class="logo">NEXA</div>
+        </div>
+        <nav class="nav-menu">
+            <a class="nav-item active"><i class="fas fa-th-large"></i> Dashboard</a>
+            <a class="nav-item"><i class="fas fa-broadcast-tower"></i> Alerts</a>
+            <a class="nav-item"><i class="fas fa-map"></i> Safety Maps</a>
+            <a class="nav-item"><i class="fas fa-layer-group"></i> Help Tools</a>
+        </nav>
+        <div class="nav-user">
+            <div class="user-info">
+                <span class="avatar">{{ userName.charAt(0) }}</span>
+                <span class="user-name">{{ userName }}</span>
+            </div>
+            <button class="icon-btn" (click)="logout()"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+    </aside>
+
+    <main class="dashboard-content">
+        <header class="content-header">
+            <div class="header-breadcrumb">
+                <span class="text-tertiary">App</span> / <span class="text-primary">Dashboard</span>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn-outline"><i class="fas fa-search"></i></button>
+                <button class="icon-btn-outline"><i class="fas fa-bell"></i></button>
+            </div>
+        </header>
+
+        <section class="overview-section">
+            <h1 class="page-title">Welcome, {{ userName }}</h1>
+            <p class="text-secondary">Everything is working correctly. We are here to help.</p>
+
+            <div class="grid dashboard-stats">
+                <div class="stat-card premium-card">
+                    <span class="label">Priority Alerts</span>
+                    <div class="value text-gradient">03</div>
+                    <span class="badge red">Action Required</span>
+                </div>
+                <div class="stat-card premium-card">
+                    <span class="label">Recent Reports</span>
+                    <div class="value">01</div>
+                    <span class="badge blue">Acknowledged</span>
+                </div>
+                <div class="stat-card premium-card">
+                    <span class="label">System Status</span>
+                    <div class="value">Excellent</div>
+                    <span class="badge green">Working</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="actions-section">
+            <h2 class="section-title">Emergency Actions</h2>
+            <div class="grid operations-grid">
+                <div class="op-card premium-card">
+                    <div class="op-icon red"><i class="fas fa-exclamation-circle"></i></div>
+                    <h3>Request Help</h3>
+                    <p>Send an emergency alert to all responders.</p>
+                    <button class="btn-nexa-primary sm">Send Now</button>
+                </div>
+                <div class="op-card premium-card">
+                    <div class="op-icon blue"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Find Safety</h3>
+                    <p>Find the nearest safe place on the map.</p>
+                    <button class="btn-nexa-outline sm">Open Map</button>
+                </div>
+                <div class="op-card premium-card">
+                    <div class="op-icon"><i class="fas fa-id-card"></i></div>
+                    <h3>My Profile</h3>
+                    <p>View and update your personal information.</p>
+                    <button class="btn-nexa-outline sm">Settings</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

@@ -1,5 +1,75 @@
-<h2>Register</h2>
-<input placeholder="Email" [(ngModel)]="email"><br>
-<input type="password" placeholder="Password" [(ngModel)]="password"><br>
-<button (click)="register()">Register</button>
-<a routerLink="/">Back to Login</a>
+<nav class="top-nav glass-card">
+  <div class="logo-area">
+    <a routerLink="/" class="logo">NEXA</a>
+  </div>
+  <div class="nav-links ml-2">
+    <a routerLink="/login">Already have an account? <span class="text-primary font-bold">Log In</span></a>
+  </div>
+</nav>
+
+<div class="auth-wrapper">
+  <div class="auth-card premium-card">
+    <div class="auth-header">
+      <h1 class="auth-title">Join Us</h1>
+      <p class="text-tertiary">Create your simple NEXA account.</p>
+    </div>
+
+    <form class="auth-form" (ngSubmit)="register()">
+      <div class="input-group">
+        <label>Full Name</label>
+        <div class="input-wrapper">
+          <i class="fas fa-user-circle"></i>
+          <input type="text" [(ngModel)]="registerObj.fullName" name="fullName" placeholder="Your Name" required>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Choose a Username</label>
+        <div class="input-wrapper">
+          <i class="fas fa-at"></i>
+          <input type="text" [(ngModel)]="registerObj.email" name="email" placeholder="Username" required>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Password</label>
+        <div class="input-wrapper">
+          <i class="fas fa-lock"></i>
+          <input type="password" [(ngModel)]="registerObj.password" name="password" placeholder="Create Password"
+            required>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Who are you?</label>
+        <div class="input-wrapper">
+          <i class="fas fa-users"></i>
+          <select [(ngModel)]="registerObj.role" name="role" required>
+            <option value="USER">User</option>
+            <option value="RESPONDER">Responder</option>
+            <option value="ADMIN">Admin</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="auth-actions">
+        <button type="submit" class="btn-nexa-primary full">Create Account</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="auth-status">
+    <span class="status-indicator"></span> Your data is safe with us
+  </div>
+</div>
+
+<footer class="bottom-footer glass-card">
+  <div class="footer-logo text-gradient">NEXA</div>
+  <div class="footer-links">
+    <span>© 2026 NEXA Corporation</span>
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+    <a href="#">Cookies</a>
+  </div>
+  <div class="footer-support">Professional Support</div>
+</footer>

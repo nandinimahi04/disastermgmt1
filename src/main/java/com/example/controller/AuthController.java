@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -21,7 +22,11 @@ public class AuthController {
 
     @PostMapping("/register")
     public User register(@RequestBody Map<String, String> data) {
-        return authService.register(data.get("email"), data.get("password"), data.get("role"));
+        return authService.register(
+                data.get("email"),
+                data.get("password"),
+                data.get("role"),
+                data);
     }
 
     @PostMapping("/login")

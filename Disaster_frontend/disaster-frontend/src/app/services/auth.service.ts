@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private baseUrl = 'http://localhost:8080/api/auth';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login(data: any) {
     return this.http.post(`${this.baseUrl}/login`, data);
@@ -20,7 +20,20 @@ export class AuthService {
   isLoggedIn() {
     return !!localStorage.getItem('token');
   }
-  logout(){
+
+  getRole() {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+    try {
+      const payload = token.split('.')[1];
+      const decodedPayload = JSON.parse(atob(payload));
+      return decodedPayload.role;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  logout() {
     localStorage.removeItem('token');
   }
 }
