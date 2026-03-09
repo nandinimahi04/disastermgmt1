@@ -40,6 +40,11 @@ import { AuthService } from '../../services/auth.service';
           <span class="text">Resources</span>
         </a>
 
+        <a *ngIf="userRole === 'ROLE_ADMIN'" routerLink="/incidents" routerLinkActive="active" class="nav-item">
+          <span class="icon">🚨</span>
+          <span class="text">Incidents</span>
+        </a>
+
         <a *ngIf="userRole === 'ROLE_CITIZEN'" routerLink="/help" routerLinkActive="active" class="nav-item">
           <span class="icon">🆘</span>
           <span class="text">Request Help</span>

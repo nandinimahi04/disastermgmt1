@@ -33,6 +33,11 @@ The system supports three distinct user roles, each with a tailored command inte
 - **Warehouse Logistics**: Track resource quantities across different base camps/warehouses.
 - **Efficiency Metrics**: Visualization of resource distribution across affected regions.
 
+### 6. Crowdsourced Incident Reporting (New Feature) 🚨
+- **Citizen Empowerment**: Citizens can report incidents directly with location and severity.
+- **Admin Verification**: Direct pipeline for authorities to verify public reports before broadcasting alerts.
+- **SOS Actions**: Integrated emergency assistance requests with severity tracking.
+
 ---
 
 ## 🎨 Design & UX
@@ -47,39 +52,25 @@ The system supports three distinct user roles, each with a tailored command inte
 ### **Backend (Spring Boot)**
 - **Framework**: Spring Boot 3.2.x (Java 17)
 - **Security**: Spring Security 6 with **JWT (JSON Web Tokens)** for stateless authentication.
-- **Data**: Spring Data JPA with **H2 In-Memory Database** (ideal for rapid development and demos).
+- **Data**: Spring Data JPA with **H2 In-Memory Database**.
 - **Lombok**: For clean, boilerplate-free model definitions.
 
 ### **Frontend (Angular)**
 - **Framework**: Angular 19+ (Standalone Component Architecture).
-- **Styling**: Vanilla CSS with a custom Design System (Theming via CSS Variables).
+- **Styling**: Vanilla CSS with a custom Design System.
 - **UX**: RxJS for reactive data handling and animated transitions.
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- **JDK 17** or higher
-- **Node.js 18** or higher
-- **Maven** (optional, wrapper provided)
-
 ### Setup Instructions
-1. **Backend**:
-   - Navigate to the root directory.
-   - Run: `./mvnw.cmd spring-boot:run`
-   - API will be live at `http://localhost:8080`
-
-2. **Frontend**:
-   - Navigate to the `frontend` directory.
-   - Run: `npm start`
-   - Application will be live at `http://localhost:4200`
+1. **Backend**: Run `./mvnw.cmd spring-boot:run`
+2. **Frontend**: Run `npm start` in the `frontend` directory.
 
 ---
 
 ## 🔑 Test Credentials (Seed Data)
-The system is pre-seeded with the following accounts for assessment:
-
 | Role | Email | Password |
 | :--- | :--- | :--- |
 | **Admin** | `admin@test.com` | `admin123` |

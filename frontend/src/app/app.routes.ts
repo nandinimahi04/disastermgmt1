@@ -6,6 +6,7 @@ import { DisasterManagementComponent } from './components/disaster/disaster-mana
 import { AlertBroadcastComponent } from './components/alert/alert-broadcast.component';
 import { ResponderDashboardComponent } from './components/dashboard/responder-dashboard.component';
 import { ResourceManagementComponent } from './components/resources/resource-management.component';
+import { IncidentManagementComponent } from './components/incidents/incident-management.component';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -16,6 +17,7 @@ export const routes: Routes = [
     { path: 'alerts/broadcast', component: AlertBroadcastComponent, canActivate: [authGuard] },
     { path: 'tasks', component: ResponderDashboardComponent, canActivate: [authGuard] },
     { path: 'resources', component: ResourceManagementComponent, canActivate: [authGuard] },
+    { path: 'incidents', component: IncidentManagementComponent, canActivate: [authGuard] },
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: '**', redirectTo: 'login' }
 ];
